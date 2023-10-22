@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std; 
+
+int calcularDistanciaHamming(const string & binario1, const string & binario2);
+
+int main() {
+    string n1, n2;
+
+    cout << "Ingrese la primera cadena binaria: ";
+    cin >> n1;
+    cout << "Ingrese la segunda cadena binaria: ";
+    cin >> n2;
+
+    if (n1.length() != n2.length()) {
+        cout << "Las cadenas no tienen la misma longitud." << endl;
+        return 1;
+    }
+
+    int distancia = calcularDistanciaHamming(n1, n2);
+
+    cout << "La distancia de Hamming entre " << n1 << " y " << n2 << " es: " << distancia << endl;
+
+    return 0;
+}
+int calcularDistanciaHamming(const string & binario1, const string & binario2) {
+    int distancia = 0;
+    for (int i = 0; i < binario1.length(); i++) {
+        if (binario1[i] != binario2[i]) {
+            distancia++;
+        }
+    }
+    return distancia;
+}
